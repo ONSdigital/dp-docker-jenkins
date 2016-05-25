@@ -22,7 +22,7 @@ junit
 ldap
 mailer
 matrix-auth
-matrix-project:1.6
+matrix-project
 momentjs
 pam-auth
 pipeline-build-step
