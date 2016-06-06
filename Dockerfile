@@ -2,7 +2,10 @@ FROM jenkinsci/jenkins:latest
 
 USER root
 
+RUN wget -qO- https://deb.nodesource.com/setup_6.x | bash
+
 RUN apt-get clean && apt-get update && apt-get -y upgrade
+RUN apt-get -y install nodejs bzip2
 
 RUN wget -qO- https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install awscli
