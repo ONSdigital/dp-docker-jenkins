@@ -4,8 +4,11 @@ USER root
 
 RUN wget -qO- https://deb.nodesource.com/setup_4.x | bash
 
+RUN echo deb https://dl.bintray.com/sbt/debian / > /etc/apt/sources.list.d/sbt.list
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+
 RUN apt-get clean && apt-get update && apt-get -y upgrade
-RUN apt-get -y install nodejs bzip2
+RUN apt-get -y install nodejs bzip2 sbt
 
 RUN wget -qO- https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install awscli
@@ -18,6 +21,4 @@ RUN usermod -aG docker jenkins
 
 USER jenkins
 
-COPY plugins.txt /usr/share/jenkins/plugins.txt
-
-RUN /usr/local/bin/install-plugins.sh $(tr '\n' ' ' < /usr/share/jenkins/plugins.txt)
+RUN /usr/local/bin/install-plugins.sh docker-workflow github workflow-aggregator

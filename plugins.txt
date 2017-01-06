@@ -1,3 +1,0 @@
-docker-workflow
-github
-workflow-aggregator
