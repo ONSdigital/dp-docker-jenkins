@@ -11,7 +11,7 @@ RUN echo deb http://dl.google.com/linux/chrome/deb/ stable main > /etc/apt/sourc
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 
 RUN apt-get clean && apt-get update && apt-get -y upgrade
-RUN apt-get -y install nodejs bzip2 sbt google-chrome-stable xvfb
+RUN apt-get -y install nodejs bzip2 sbt google-chrome-stable xvfb make
 
 RUN wget -qO- https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install awscli
