@@ -24,4 +24,4 @@ RUN usermod -aG docker jenkins
 
 USER jenkins
 
-RUN /usr/local/bin/install-plugins.sh docker-workflow github workflow-aggregator xvfb build-monitor-plugin
+RUN /usr/local/bin/install-plugins.sh docker-workflow github workflow-aggregator xvfb build-monitor-plugin cucumber-reports
