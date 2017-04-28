@@ -23,7 +23,7 @@ RUN apt-get -y install   \
 RUN wget -qO- https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install awscli
 
-RUN wget -qO- https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz | tar -xvz -C /usr/local
+RUN wget -qO- https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz | tar -xvz -C /usr/local
 ENV PATH $PATH:/usr/local/go/bin
 
 RUN git clone https://github.com/awslabs/amazon-ecr-credential-helper \
